@@ -2,6 +2,20 @@
 use crate::*;
 
 #[test]
+fn deck_shuffle() {
+    assert_ne!(new_standard_deck(), new_standard_deck().shuffle());
+    assert_ne!(new_italian_deck(), new_italian_deck().shuffle());
+}
+
+#[test]
+fn shuffle_onehundred() {
+    for _ in 0..100 {
+        assert_ne!(new_standard_deck(), new_standard_deck().shuffle());
+        assert_ne!(new_italian_deck(), new_italian_deck().shuffle());
+    }
+}
+
+#[test]
 fn create_new_standard_deck() {
     let manual_standard_deck = Deck {
         deck_type: DeckType::Standard,

@@ -72,8 +72,8 @@ impl Deck {
         let mut current_order = self.cards.clone();
         let mut shufl_cards = Vec::new();
 
-        for _ in self.cards.iter() {
-            let gotten_index = rng.gen_range(1..=deck_legnth);
+        for (i, _) in self.cards.iter().enumerate() {
+            let gotten_index = rng.gen_range(0..(deck_legnth - i));
             shufl_cards.push(current_order[gotten_index].clone());
             current_order.remove(gotten_index);
         }
