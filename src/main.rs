@@ -9,5 +9,5 @@ use solitude::pyramid::*;
 
 fn main() {
     println!("Solitude is running");
-    gameloop();
+    gameloop(solitude::DeckType::Italian);
 }
